@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | Elisyum Trend</title>
+    <link class="styles" rel="stylesheet" href="styles/indexstyle.css">
+    <link class="styles" rel="stylesheet" href="styles/productosstyle.css">
+    <script src="scripts/indexscript.js"></script>
+</head>
+<body>
+
+    <header class="header header-productos">
+        <div class="menu container">
+            <div class="logo-area">
+                <input type="checkbox" id="menu">
+                <label for="menu"> 
+                    <img src="images/menu.png" class="menu-icon" alt="menu">
+                </label>
+                <a href="index.html" class="logo-link">
+                    <img src="images/Logo.png" class="logo-img" alt="Logo MAI">
+                </a>
+            </div>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="testimonios.html">Testimonios</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Blog</a>
+                        <ul class="submenu-blog">
+                            <li><a href="noticias.html">Noticias</a></li>
+                            <li><a href="articulos.html">Artículos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+           <div class="carrito-container">
+    <ul>
+        <li class="sub-menu">
+            <img src="images/car.svg" id="img-carrito" alt="carrito">
+            <div id="carrito">
+                <table id="lista-carrito">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>  
+                
+                <!-- Contenedor con los dos botones alineados perfectamente -->
+                <div style="display: flex; gap: 10px; margin-top: 15px; padding: 0 10px 10px 10px;">
+                    <a href="#" id="vaciar-carrito" class="btn-2" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none;">Vaciar Carrito</a>
+                    <a href="pago.html" id="ir-pagar" class="btn-1" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none; display: inline-block;">Pagar Pedido</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    </header>
+
+    <section class="shop-hero container">
+        <h1>Drop Actual</h1>
+        <p>Armaduras urbanas diseñadas para la cultura underground. Ediciones limitadas.</p>
+    </section>
+
+    <main class="shop-layout container">
+        
+        <aside class="shop-sidebar">
+            <div class="filter-group">
+                <h3>Categorías</h3>
+                <ul class="filter-list">
+                    <li><a href="#" class="active-filter" data-filter="todos">Ver Todo</a></li>
+                    <li><a href="#" data-filter="poleras">Poleras & Hoodies</a></li>
+                    <li><a href="#" data-filter="t-shirts">T-Shirts Boxy</a></li>
+                    <li><a href="#" data-filter="pantalones">Pantalones Cargo</a></li>
+                    <li><a href="#" data-filter="accesorios">Accesorios Street</a></li>
+                </ul>
+            </div>
+            
+            
+            <div class="filter-group">
+                <h3>Disponibilidad</h3>
+                <label class="filter-checkbox">
+                    <input type="checkbox" id="chk-en-stock" checked> En Stock
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" id="chk-drops-pasados"> Drops Pasados
+                </label>
+            </div>
+        </aside>
+
+        <section class="products-grid-wrapper">
+            
+            <div class="grid-utility-bar">
+                <span class="product-count">Mostrando 16 productos</span>
+                <!-- CAMBIAR POR ESTE: -->
+                    <select class="sort-select" id="ordenar-precio">
+                        <option value="defecto">Ordenar por: Novedades</option>
+                        <option value="barato-caro">Precio: Menor a Mayor</option>
+                        <option value="caro-barato">Precio: Mayor a Menor</option>
+                    </select>
+            </div>
+
+            <div class="products-grid" id="lista-catalogo">
+                
+                <div class="product-item" data-category="poleras">
+                    <div class="product-img-box">
+                        <img src="images/Hoodie Heavyweight.jpg" alt="Hoodie Heavyweight Cyberpunk">
+                        <span class="badge-tag tag-new">Nuevo Drop</span>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Poleras</span>
+                        <h3 class="product-title">Hoodie Heavyweight "Cyber"</h3>
+                        <p class="product-desc">Algodón de 450g con textura rústica y capucha sobredimensionada.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 240.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="201">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="pantalones">
+                    <div class="product-img-box">
+                        <img src="images/Pantalón Táctico.jpg" alt="Pantalón Táctico Cargo">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Pantalones</span>
+                        <h3 class="product-title">Pantalón Cargo "Vandal"</h3>
+                        <p class="product-desc">Corte holgado, multibolsillos laterales y cordones de ajuste técnico.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 195.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="202">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="t-shirts">
+                    <div class="product-img-box">
+                        <img src="images/T-Shirt Boxy Fit Shibuya.jpg" alt="T-Shirt Boxy Fit Shibuya">
+                        <span class="badge-tag tag-new">Nuevo Drop</span>
+                    </div>
+
+                    <div class="product-details">
+                        <span class="product-category">T-Shirts</span>
+                        <h3 class="product-title">T-Shirt Boxy "Shibuya"</h3>
+                        <p class="product-desc">Corte cuadrado dropped-shoulder con estampado premium de alta densidad.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 120.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="203">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="accesorios" data-stock="false">
+                    <div class="product-img-box">
+                        <img src="images/Beanie Pescador.jpg" alt="Beanie Pescador Black">
+                        <span class="badge-tag tag-new">agotado</span>
+                    </div>
+                    
+                    <div class="product-details">
+                        <span class="product-category">Accesorios</span>
+                        <h3 class="product-title">Beanie Corto "Core"</h3>
+                        <p class="product-desc">Tejido de punto acanalado grueso, ajuste clásico estilo pescador.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 65.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="204">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="poleras">
+                    <div class="product-img-box">
+                        <img src="images/Cortavientos Phantom.jpg" alt="Cortavientos Phantom Reflectivo">
+                        <span class="badge-tag tag-limited">Limited</span>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Poleras</span>
+                        <h3 class="product-title">Windbreaker "Phantom"</h3>
+                        <p class="product-desc">Material cortavientos impermeable con paneles reflectantes a la luz nocturna.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 260.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="205">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="t-shirts">
+                    <div class="product-img-box">
+                        <img src="images/Longsleeve Neo-Goth.jpg" alt="Longsleeve Neo-Goth">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">T-Shirts</span>
+                        <h3 class="product-title">Longsleeve "Neo-Goth"</h3>
+                        <p class="product-desc">Polo manga larga con puños acanalados y estampados gráficos industriales.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 145.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="206">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="pantalones">
+                    <div class="product-img-box">
+                        <img src="images/Short Heavy Fleece.jpg" alt="Short Heavy Fleece">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Pantalones</span>
+                        <h3 class="product-title">Short Heavy "Lounge"</h3>
+                        <p class="product-desc">Felpa de algodón premium, bolsillos con cierre invisible y pretina elástica.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 110.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="207">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="accesorios">
+                    <div class="product-img-box">
+                        <img src="images/Cinturón Táctico Industrial.jpg" alt="Cinturón Táctico Industrial">
+                        <span class="badge-tag tag-limited">Limited</span>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Accesorios</span>
+                        <h3 class="product-title">Cinturón "Industrial Utility"</h3>
+                        <p class="product-desc">Correa de nylon reforzada de alta resistencia con hebilla de liberación rápida.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 75.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="208">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- PRODUCTO 9 (De Galería 1) -->
+                <div class="product-item" data-category="poleras">
+                    <div class="product-img-box">
+                        <img src="images/images_products/Streetwear Look 1 - Oversized Hoodie.jpg" alt="Oversized Hoodie">
+                        <span class="badge-tag tag-new">Nuevo Drop</span>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Poleras</span>
+                        <h3 class="product-title">Oversized Hoodie "Chaos"</h3>
+                        <p class="product-desc">Hombros caídos con diseño minimalista, ideal para el look diario urbano.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 250.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="209">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 10 (De Galería 2) -->
+                <div class="product-item" data-category="pantalones">
+                    <div class="product-img-box">
+                        <img src="images/images_products/Streetwear Look 2 - Cargo Pants.jpg" alt="Cargo Pants">
+                        <span class="badge-tag tag-limited">Limited</span>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Pantalones</span>
+                        <h3 class="product-title">Cargo Pants "Blackout"</h3>
+                        <p class="product-desc">Pantalones cargo de silueta ancha, bolsillos de fuelle y remaches metálicos.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 210.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="210">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 11 (De Galería 3) -->
+                <div class="product-item" data-category="t-shirts">
+                    <div class="product-img-box">
+                        <img src="images/images_products/Streetwear Look 3 - Graphic Tee.jpg" alt="Graphic Tee">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">T-Shirts</span>
+                        <h3 class="product-title">Graphic Tee "Essential"</h3>
+                        <p class="product-desc">Camiseta básica con un fit impecable y gráfico vanguardista en la espalda.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 115.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="211">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 12 (De Galería 4) -->
+                <div class="product-item" data-category="accesorios">
+                    <div class="product-img-box">
+                        <img src="images/images_products/Streetwear Look 4 - Cap Rebel.jpg" alt="Cap Rebel">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Accesorios</span>
+                        <h3 class="product-title">Rebel Cap "Core"</h3>
+                        <p class="product-desc">Gorra desestructurada de 6 paneles con bordados desgastados de alta costura.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 85.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="212">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 13 (De Galería 5) -->
+                <div class="product-item" data-category="poleras">
+                    <div class="product-img-box">
+                        <img src="images/images_products/Streetwear Look 5 - Windbreaker Cyber.jpg" alt="Windbreaker">
+                        <span class="badge-tag tag-limited">Limited</span>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Poleras</span>
+                        <h3 class="product-title">Cyber Windbreaker "Tech"</h3>
+                        <p class="product-desc">Chaqueta impermeable ligera con cremalleras termoselladas y capucha ajustable.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 275.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="213">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 14 (De Galería 6) -->
+                <div class="product-item" data-category="pantalones">
+                    <div class="product-img-box">
+                        <img src="images/images_products/Streetwear Look 6 - Shorts Athletic.jpg" alt="Shorts">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Pantalones</span>
+                        <h3 class="product-title">Athletic Shorts "Speed"</h3>
+                        <p class="product-desc">Pantalones cortos de doble capa con malla interior y costuras planas anti-roce.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 125.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="214">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 15 (De Galería 7) -->
+                <div class="product-item" data-category="accesorios">
+                    <div class="product-img-box">
+                        <img src="images/images_products/Streetwear Look 7 - Techwear Vest.jpg" alt="Vest">
+                        <span class="badge-tag tag-new">Nuevo Drop</span>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Accesorios</span>
+                        <h3 class="product-title">Tactical Vest "Harness"</h3>
+                        <p class="product-desc">Chaleco táctico funcional con bolsillos de acceso rápido y hebillas reforzadas.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 180.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="215">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 16 (De Galería 8) -->
+                <div class="product-item" data-category="accesorios">
+                    <div class="product-img-box">
+                        <img src="images/images_products/Streetwear Look 8 - Socks & Sneaks.jpg" alt="Urban Socks">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Accesorios</span>
+                        <h3 class="product-title">Urban Socks "Pack x3"</h3>
+                        <p class="product-desc">Calcetines de caña alta con tejido de compresión y diseño de letras jacquard.</p>
+                        <div class="product-footer">
+                            <span class="product-price">S/. 55.00</span>
+                            <button class="agregar-carrito btn-shop" data-id="216">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="shop-pagination">
+                <a href="#" class="page-num current-page">1</a>
+                <a href="#" class="page-num">2</a>
+                <a href="#" class="page-next">&raquo;</a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-nav">
+            <a href="index.html">INICIO</a>
+            <a href="productos.html">PRODUCTOS</a>
+            <a href="nosotros.html">NOSOTROS</a>
+            <a href="testimonios.html">TESTIMONIOS</a>
+            <a href="contacto.html">CONTACTO</a>
+        </div>
+
+        <div class="footer-socials">
+            <a href="https://www.facebook.com/share/1BLwyTLEC2/" class="social-item" title="Facebook">
+                <!-- Icono Facebook SVG -->
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                <span class="social-label">Facebook</span>
+            </a>
+            <a href="https://x.com/Mailsonxp" class="social-item" title="Twitter">
+                <!-- Icono Twitter / X SVG -->
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                <span class="social-label">Twitter</span>
+            </a>
+            <a href="https://www.instagram.com/_mai_san_02_?igsh=bzNjZHJ1MHczN2Y0" class="social-item" title="Instagram">
+                <!-- Icono Instagram SVG -->
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <span class="social-label">Instagram</span>
+            </a>
+            <a href="https://wa.me/56912345678" target="_blank" class="social-item" title="WhatsApp">
+                <!-- Icono WhatsApp SVG -->
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                <span class="social-label">WhatsApp</span>
+            </a>
+        </div>
+
+        <div class="footer-contact-info">
+            <div class="contact-item email-item">
+                <span class="contact-icon">✉️</span>
+                <a href="mailto:info@urbanstylestore.com">info@urbanstylestore.com</a>
+            </div>
+            <div class="contact-item phone-item">
+                <span class="contact-icon">📞</span>
+                <a href="tel:+56912345678">(+51) 9 1234 5678</a>
+            </div>
+            <div class="contact-item address-item">
+                <span class="contact-icon">🏠</span>
+                <div class="address-text">
+                    <strong>Urban Style Store</strong>
+                    <span>Cajamarca-Cajabamba</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; 2026 Urban Style Store. Todos los derechos reservados. | Diseñado por <span class="highlight">Mailson</span></p>
+        </div>
+    </footer>
+
+
+    <script src="scripts/productosscript.js"></script>
+</body>
+</html>

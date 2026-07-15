@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonios | Elisyum Trend</title>
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="styles/indexstyle.css">
+    <link rel="stylesheet" href="styles/testimonios.css">
+    <script src="scripts/indexscript.js"></script>
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header" style="min-height: auto; padding-bottom: 20px;">
+        <div class="menu container">
+            <div class="logo-area">
+                <input type="checkbox" id="menu">
+                <label for="menu"> 
+                    <!-- Icono de menú importado de la web -->
+                    <img src="images/logo.png" class="menu-icon" alt="menu">
+                </label>
+                <a href="index.html" class="logo-link">
+                    <!-- Logo temporal premium importado de la web -->
+                    <img src="images/logo.png" class="logo-img" alt="Logo Elisyum" >
+                </a>
+            </div>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="testimonios.html">Testimonios</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Blog</a>
+                        <ul class="submenu-blog">
+                            <li><a href="noticias.html">Noticias</a></li>
+                            <li><a href="articulos.html">Artículos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+<div class="carrito-container">
+    <ul>
+        <li class="sub-menu">
+            <img src="images/car.svg" id="img-carrito" alt="carrito">
+            <div id="carrito">
+                <table id="lista-carrito">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>  
+                
+                <!-- Contenedor con los dos botones alineados perfectamente -->
+                <div style="display: flex; gap: 10px; margin-top: 15px; padding: 0 10px 10px 10px;">
+                    <a href="#" id="vaciar-carrito" class="btn-2" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none;">Vaciar Carrito</a>
+                    <a href="pago.html" id="ir-pagar" class="btn-1" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none; display: inline-block;">Pagar Pedido</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    </header>
+
+    <!-- ================= CONTENIDO PRINCIPAL DE TESTIMONIOS ================= -->
+    <main class="testimonios-main">
+        <section class="testimonios-section">
+            <div class="testimonios-header">
+                <span class="sub-tag">COMUNIDAD ELISYUM</span>
+                <h2>LO QUE DICEN DE NOSOTROS</h2>
+                <div class="header-line"></div>
+                <p>Nuestra comunidad habla por nosotros. Conoce las opiniones de quienes ya visten el auténtico streetwear underground.</p>
+            </div>
+
+            <!-- Grid de Tarjetas de Testimonios -->
+            <div class="testimonios-grid" id="testimoniosGrid">
+                
+                <!-- Testimonio 1 -->
+                <article class="testimonio-card">
+                    <div class="card-top">
+                        <div class="user-meta">
+                            <!-- Foto importada de Unsplash -->
+                            <img src="images/testimonio/sofia.jpg" alt="Sofía L." class="user-avatar">
+                            <div class="user-info">
+                                <h4>Sofía L.</h4>
+                                <span class="user-tag">Verificado</span>
+                            </div>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p class="testimonio-text">"La calidad del algodón Heavyweight es de otro planeta. La sudadera oversized calza perfecta y aguanta las lavadas sin perder color. Envío súper rápido."</p>
+                    <span class="date-tag">Hace 2 días</span>
+                </article>
+
+                <!-- Testimonio 2 -->
+                <article class="testimonio-card">
+                    <div class="card-top">
+                        <div class="user-meta">
+                            <!-- Foto importada de Unsplash -->
+                            <img src="images/testimonio/mateo.jpg" alt="Mateo R." class="user-avatar">
+                            <div class="user-info">
+                                <h4>Mateo R.</h4>
+                                <span class="user-tag">Verificado</span>
+                            </div>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p class="testimonio-text">"El Tactical Vest superó mis expectativas. Tiene un look brutal para armar fits techwear y los acabados en los cierres se notan premium. Definitivamente vuelvo a comprar."</p>
+                    <span class="date-tag">Hace 1 semana</span>
+                </article>
+
+                <!-- Testimonio 3 -->
+                <article class="testimonio-card">
+                    <div class="card-top">
+                        <div class="user-meta">
+                            <!-- Foto importada de Unsplash -->
+                            <img src="images/testimonio/elena.jpg" alt="Elena V." class="user-avatar">
+                            <div class="user-info">
+                                <h4>Elena V.</h4>
+                                <span class="user-tag">Verificado</span>
+                            </div>
+                        </div>
+                        <div class="stars">★★★★☆</div>
+                    </div>
+                    <p class="testimonio-text">"Excelente corte en los Cargo Pants. Quedan muy cómodos y el estilo es único. Le pongo 4 estrellas solo porque se agotó el color gris muy rápido, pero el negro es increíble."</p>
+                    <span class="date-tag">Hace 2 semanas</span>
+                </article>
+                
+            </div>
+
+            <div class="separator-line"></div>
+
+            <!-- Formulario interactivo para dejar testimonio -->
+            <div class="formulario-testimonio">
+                <h3>DEJA TU REVOLUCIÓN</h3>
+                <p>¿Ya tienes tu Drop de Elisyum? Cuéntale a la cultura urbana tu experiencia.</p>
+                
+                <form id="formTestimonio">
+                    <div class="input-group">
+                        <input type="text" id="nombreInput" placeholder="Tu Nombre" required>
+                    </div>
+
+                    <!-- NUEVO: Título dinámico para calificar en estrellas -->
+                    <div class="rating-area" style="margin-bottom: 20px;">
+                        <label style="display: block; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">CALIFICA EN ESTRELLAS:</label>
+                        <div class="star-rating" style="font-size: 1.8rem; cursor: pointer; color: #ccc; display: flex; gap: 5px;">
+                            <span class="star" data-value="1" style="transition: color 0.2s;">★</span>
+                            <span class="star" data-value="2" style="transition: color 0.2s;">★</span>
+                            <span class="star" data-value="3" style="transition: color 0.2s;">★</span>
+                            <span class="star" data-value="4" style="transition: color 0.2s;">★</span>
+                            <span class="star" data-value="5" style="transition: color 0.2s;">★</span>
+                        </div>
+                        <input type="hidden" id="ratingValue" value="5">
+                    </div>
+
+                    <!-- NUEVO: Título dinámico para escribir mensaje -->
+                    <div class="input-group">
+                        <label style="display: block; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">ESCRIBE UN MENSAJE:</label>
+                        <textarea id="mensajeInput" rows="4" placeholder="Escribe tu mensaje sobre las prendas, el fit o el envío..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar-opinion">PUBLICAR OPINIÓN</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="main-footer">
+        <div class="footer-nav">
+            <a href="index.html">INICIO</a>
+            <a href="productos.html">PRODUCTOS</a>
+            <a href="nosotros.html">NOSOTROS</a>
+            <a href="testimonios.html">TESTIMONIOS</a>
+            <a href="contacto.html">CONTACTO</a>
+        </div>
+
+        <div class="footer-socials">
+            <a href="https://www.facebook.com/share/1BLwyTLEC2/" class="social-item" title="Facebook">
+                <!-- Icono Facebook SVG -->
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                <span class="social-label">Facebook</span>
+            </a>
+            <a href="https://x.com/Mailsonxp" class="social-item" title="Twitter">
+                <!-- Icono Twitter / X SVG -->
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                <span class="social-label">Twitter</span>
+            </a>
+            <a href="https://www.instagram.com/_mai_san_02_?igsh=bzNjZHJ1MHczN2Y0" class="social-item" title="Instagram">
+                <!-- Icono Instagram SVG -->
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <span class="social-label">Instagram</span>
+            </a>
+            <a href="https://wa.me/56912345678" target="_blank" class="social-item" title="WhatsApp">
+                <!-- Icono WhatsApp SVG -->
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                <span class="social-label">WhatsApp</span>
+            </a>
+        </div>
+
+        <div class="footer-contact-info">
+            <div class="contact-item email-item">
+                <span class="contact-icon">✉️</span>
+                <a href="mailto:info@urbanstylestore.com">info@urbanstylestore.com</a>
+            </div>
+            <div class="contact-item phone-item">
+                <span class="contact-icon">📞</span>
+                <a href="tel:+56912345678">(+51) 9 1234 5678</a>
+            </div>
+            <div class="contact-item address-item">
+                <span class="contact-icon">🏠</span>
+                <div class="address-text">
+                    <strong>Urban Style Store</strong>
+                    <span>Cajamarca-Cajabamba</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; 2026 Urban Style Store. Todos los derechos reservados. | Diseñado por <span class="highlight">Mailson</span></p>
+        </div>
+    </footer>
+
+
+    <script src="scripts/testimonio.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasarela de Pago | Elisyum Trend</title>
+    <link rel="stylesheet" href="styles/indexstyle.css">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --accent-color: #e63946;
+            --bg-light: #f8f9fa;
+            --border-color: #e5e5e5;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+        .menu.container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo-img {
+            max-height: 50px;
+            width: auto;
+            display: block;
+        }
+        .btn-regresar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background: #ffffff;
+        }
+        .btn-regresar:hover {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border-color: var(--primary-color);
+            transform: translateX(-3px);
+        }
+
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            padding: 40px 20px;
+            margin-top: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-pago, .resumen-boleta {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            height: fit-content;
+        }
+        .form-pago h3, .resumen-boleta h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #444;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .btn-pagar {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary-color);
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            margin-top: 15px;
+        }
+        .btn-pagar:hover {
+            background: #222222;
+        }
+        .btn-pagar:active {
+            transform: scale(0.98);
+        }
+
+        /* Estilos de Controles de Cantidad (+ / -) */
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 5px;
+        }
+        .btn-qty {
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        .btn-qty:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+        .qty-val {
+            font-size: 0.95rem;
+            font-weight: 600;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        /* La Boleta de Venta */
+        .boleta-preview {
+            background-color: #fafafa;
+            border: 2px dashed #bbb;
+            padding: 25px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 25px;
+            display: none; /* Se mostrará al pagar */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .boleta-logo {
+            max-height: 45px;
+            width: auto;
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+        .boleta-header {
+            text-align: center;
+            border-bottom: 1.5px dashed #aaa;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .boleta-header h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .boleta-header p {
+            margin: 3px 0;
+            font-size: 0.85rem;
+        }
+        .boleta-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .boleta-total {
+            border-top: 1.5px dashed #aaa;
+            padding-top: 15px;
+            margin-top: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1rem;
+        }
+        .btn-imprimir {
+            width: 100%;
+            padding: 12px;
+            background: #28a745;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .btn-imprimir:hover {
+            background: #218838;
+        }
+
+        /* Responsivo */
+        @media (max-width: 992px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #boleta, #boleta * {
+                visibility: visible;
+            }
+            #boleta {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                border: none;
+                box-shadow: none;
+                background: #ffffff;
+                padding: 0;
+                margin: 0;
+            }
+            .btn-imprimir {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="menu container">
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    <img src="images/Logo.png" class="logo-img" alt="Logo MAI">
+                </a>
+            </div>
+            <nav class="navbar">
+                <a href="productos.html" class="btn-regresar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Regresar a la tienda
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <h2 style="text-align: center; margin-top: 40px; text-transform: uppercase; font-weight: 800; letter-spacing: 1px;">Finalizar Compra</h2>
+        
+        <div class="checkout-container">
+            <!-- Formulario de Pago -->
+            <section class="form-pago">
+                <h3>Detalles de Facturación</h3>
+                <form id="formulario-pago">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" required placeholder="Ej. Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" required placeholder="juan@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="tarjeta">Número de Tarjeta</label>
+                        <input type="text" id="tarjeta" maxlength="16" placeholder="4111 2222 3333 4444" required>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="form-group">
+                            <label for="exp">Vencimiento</label>
+                            <input type="text" id="exp" placeholder="MM/AA" maxlength="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="password" id="cvv" placeholder="123" maxlength="3" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-pagar">Procesar Pago</button>
+                </form>
+            </section>
+
+            <!-- Resumen y Boleta -->
+            <section class="resumen-boleta">
+                <h3>Resumen de Compra</h3>
+                <div id="lista-resumen">
+                    <!-- Aquí se cargarán dinámicamente los productos del carrito -->
+                </div>
+                
+                <h3 style="margin-top: 25px; text-align: right; border: none; padding: 0;" id="monto-total">Total: $0</h3>
+
+                <!-- La Boleta de Venta -->
+                <div class="boleta-preview" id="boleta">
+                    <!-- Logo incorporado al inicio de la factura -->
+                    <img src="images/Logo.png" class="boleta-logo" alt="Logo Elisyum Trend">
+                    
+                    <div class="boleta-header">
+                        <h4>ELISYUM TREND S.A.C.</h4>
+                        <p>R.U.C. 20123456789</p>
+                        <p>BOLETA DE VENTA ELECTRÓNICA</p>
+                        <p id="boleta-fecha"></p>
+                    </div>
+                    <div id="boleta-cliente" style="margin-bottom: 12px; font-size: 0.85rem; line-height: 1.4;"></div>
+                    <div id="boleta-items">
+                        <!-- Items comprados -->
+                    </div>
+                    <div class="boleta-total">
+                        <span>TOTAL NETO:</span>
+                        <span id="boleta-total-pago"></span>
+                    </div>
+                    <p style="text-align: center; margin-top: 20px; font-size: 0.8rem; font-weight: bold;">¡Gracias por tu compra en el Drop!</p>
+                    
+                    <!-- Botón para Imprimir Factura -->
+                    <button type="button" class="btn-imprimir" onclick="window.print();">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                        Imprimir Boleta
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+   
+</body>
+</html>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const listaResumen = document.getElementById('lista-resumen');
+    const montoTotalHTML = document.getElementById('monto-total');
+    const formularioPago = document.getElementById('formulario-pago');
+    
+    const boleta = document.getElementById('boleta');
+    const boletaFecha = document.getElementById('boleta-fecha');
+    const boletaCliente = document.getElementById('boleta-cliente');
+    const boletaItems = document.getElementById('boleta-items');
+    const boletaTotalPago = document.getElementById('boleta-total-pago');
+
+    // 1. Obtener los productos guardados en localStorage
+    let productosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Normalizar carrito para que cuente con propiedad 'cantidad' si no existe
+    productosCarrito = productosCarrito.map(producto => {
+        if (!producto.cantidad) {
+            producto.cantidad = 1;
+        }
+        return producto;
+    });
+
+    // Función para actualizar localStorage y volver a renderizar el resumen
+    function actualizarCarrito() {
+        localStorage.setItem('carrito', JSON.stringify(productosCarrito));
+        renderizarResumen();
+    }
+
+    // Funciones para cambiar cantidad
+    window.cambiarCantidad = function(index, cambio) {
+        productosCarrito[index].cantidad += cambio;
+
+        if (productosCarrito[index].cantidad <= 0) {
+            // Confirmación opcional para quitar el artículo si llega a 0
+            const confirmar = confirm(`¿Deseas quitar "${productosCarrito[index].titulo}" del carrito?`);
+            if (confirmar) {
+                productosCarrito.splice(index, 1);
+            } else {
+                productosCarrito[index].cantidad = 1; // restaurar a 1 si cancela
+            }
+        }
+
+        actualizarCarrito();
+    };
+
+    // Renderizar los productos en pantalla
+    function renderizarResumen() {
+        listaResumen.innerHTML = '';
+        let total = 0;
+
+        if (productosCarrito.length === 0) {
+            listaResumen.innerHTML = '<p style="color: #666; font-style: italic;">Tu carrito está vacío. Regresa a la tienda para añadir prendas.</p>';
+            montoTotalHTML.textContent = 'Total: $0.00';
+            if(formularioPago) {
+                const btnSubmit = formularioPago.querySelector('button');
+                btnSubmit.disabled = true;
+                btnSubmit.style.opacity = '0.5';
+                btnSubmit.style.cursor = 'not-allowed';
+            }
+            return;
+        }
+
+        productosCarrito.forEach((producto, index) => {
+            const precioNumero = parseFloat(producto.precio.replace('$', ''));
+            const subtotal = precioNumero * producto.cantidad;
+            total += subtotal;
+
+            const div = document.createElement('div');
+            div.style.display = 'flex';
+            div.style.justifyContent = 'space-between';
+            div.style.alignItems = 'center';
+            div.style.marginBottom = '15px';
+            div.style.borderBottom = '1px solid #f1f1f1';
+            div.style.paddingBottom = '10px';
+
+            div.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="${producto.imagen}" width="50" height="50" style="object-fit: cover; border-radius: 6px; border: 1px solid #eee;">
+                    <div>
+                        <span style="font-weight: 600; font-size: 0.95rem; display: block;">${producto.titulo}</span>
+                        <!-- Controles de Cantidad -->
+                        <div class="qty-controls">
+                            <span class="btn-qty" onclick="cambiarCantidad(${index}, -1)">-</span>
+                            <span class="qty-val">${producto.cantidad}</span>
+                            <span class="btn-qty" onclick="cambiarCantidad(${index}, 1)">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: right;">
+                    <span style="font-weight: 700; color: var(--primary-color); display: block;">$${subtotal.toFixed(2)}</span>
+                    <small style="color: #777; font-size: 0.8rem;">$${precioNumero.toFixed(2)} c/u</small>
+                </div>
+            `;
+            listaResumen.appendChild(div);
+        });
+
+        montoTotalHTML.textContent = `Total: $${total.toFixed(2)}`;
+    }
+
+    renderizarResumen();
+
+    if (formularioPago) {
+        formularioPago.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Obtener los datos ingresados
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+
+            const botonSubmit = formularioPago.querySelector('button');
+            botonSubmit.disabled = true;
+            botonSubmit.textContent = 'Procesando pago seguro...';
+
+            setTimeout(() => {
+                alert('¡Pago Hecho Exitosamente!');
+                botonSubmit.textContent = 'Pago Realizado';
+
+                generarBoleta(nombre, email);
+
+                // Vaciar el carrito de la memoria de forma definitiva
+                localStorage.removeItem('carrito');
+                
+            }, 2000); // 2 segundos de carga
+        });
+    }
+
+    function generarBoleta(clienteNombre, clienteEmail) {
+        // Fecha actual formateada
+        const hoy = new Date();
+        const fechaFormateada = hoy.toLocaleDateString() + ' ' + hoy.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        boletaFecha.textContent = `Fecha: ${fechaFormateada}`;
+
+        // Datos del comprador
+        boletaCliente.innerHTML = `
+            <strong>CLIENTE:</strong> ${clienteNombre.toUpperCase()}<br>
+            <strong>EMAIL:</strong> ${clienteEmail}<br>
+            <strong>ESTADO:</strong> CANCELADO (ONLINE)
+        `;
+
+        boletaItems.innerHTML = '';
+        let total = 0;
+
+        productosCarrito.forEach(producto => {
+            const precioNumero = parseFloat(producto.precio.replace('$', ''));
+            const subtotal = precioNumero * producto.cantidad;
+            total += subtotal;
+
+            const item = document.createElement('div');
+            item.className = 'boleta-item';
+            item.innerHTML = `
+                <span>${producto.cantidad}x ${producto.titulo}</span>
+                <span>$${subtotal.toFixed(2)}</span>
+            `;
+            boletaItems.appendChild(item);
+        });
+
+        boletaTotalPago.textContent = `$${total.toFixed(2)}`;
+
+        // Mostrar el bloque oculto de la boleta en pantalla
+        boleta.style.display = 'block';
+        boleta.scrollIntoView({ behavior: 'smooth' });
+    }
+});
+</script>

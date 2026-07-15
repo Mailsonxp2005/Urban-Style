@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias | Elisyum Trend</title>
+    <link rel="stylesheet" href="styles/indexstyle.css">
+    <link rel="stylesheet" href="styles/noticias.css">
+    <script src="scripts/indexscript.js"></script>
+</head>
+
+<body>
+
+    <header class="header" style="min-height: auto; padding-bottom: 20px;">
+        <div class="menu container">
+            <div class="logo-area">
+                <input type="checkbox" id="menu">
+                <label for="menu"> 
+                    <img src="images/menu.png" class="menu-icon" alt="menu">
+                </label>
+                <a href="index.html" class="logo-link">
+                    <img src="images/Logo.png" class="logo-img" alt="Logo MAI">
+                </a>
+            </div>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="testimonios.html">Testimonios</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Blog</a>
+                        <ul class="submenu-blog">
+                            <li><a href="noticias.html">Noticias</a></li>
+                            <li><a href="articulos.html">Artículos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="carrito-container">
+    <ul>
+        <li class="sub-menu">
+            <img src="images/car.svg" id="img-carrito" alt="carrito">
+            <div id="carrito">
+                <table id="lista-carrito">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>  
+                
+                <!-- Contenedor con los dos botones alineados perfectamente -->
+                <div style="display: flex; gap: 10px; margin-top: 15px; padding: 0 10px 10px 10px;">
+                    <a href="#" id="vaciar-carrito" class="btn-2" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none;">Vaciar Carrito</a>
+                    <a href="pago.html" id="ir-pagar" class="btn-1" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none; display: inline-block;">Pagar Pedido</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    </header>
+
+
+   
+    <main class="noticias-container">
+        
+        <!-- Cabecera de la sección -->
+        <div class="testimonios-header">
+            <span class="sub-tag">BLACK DROP JOURNAL</span>
+            <h2>NOTICIAS REBELDES</h2>
+            <div class="header-line"></div>
+            <p>La calle no duerme, las tendencias tampoco. Entérate antes que nadie de los drops limitados y los secretos del streetwear underground.</p>
+        </div>
+
+        <!-- 1. NOTICIA DESTACADA (HERO BANNER) -->
+        <article class="noticia-destacada">
+            <img src="images/noticias/drop.jpg" alt="Lanzamiento Elisyum" class="destacada-img" id="img-noticia-0">
+            <div class="destacada-info">
+                <span class="noticia-tag">ALERTA DE DROP SECRETO</span>
+                <h3 class="noticia-titulo" id="titulo-noticia-0">ELISYUM X VOID: El drop clandestino de 100 piezas reflectantes que se agotará en segundos</h3>
+                <p class="noticia-extracto">La colaboración secreta más esperada del año está lista. Una cápsula exclusiva con chaquetas y hoodies oversize que reaccionan a los flashes nocturnos y la luz de los autos. Solo para quienes conocen el verdadero código de la calle.</p>
+                <div class="noticia-footer">
+                    <span class="noticia-fecha">14 de Julio, 2026</span>
+                    <a href="#" class="btn-leer" data-id="0">Leer Noticia →</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 2. GRID DE NOTICIAS SECUNDARIAS -->
+        <section class="noticias-grid">
+            
+            <!-- Noticia 1 -->
+            <article class="noticia-card">
+                <img src="images/noticias/moda.jpg" alt="Cultura de talle oversize" id="img-noticia-1">
+                <div class="noticia-body">
+                    <span class="noticia-tag">ALERTA DE ESTILO</span>
+                    <h3 class="noticia-titulo" id="titulo-noticia-1">La muerte del pitillo: Por qué el oversize definitivo ha conquistado los distritos de moda</h3>
+                    <p class="noticia-extracto">Los pantalones ajustados están completamente fuera del radar. Analizamos la invasión global de los cortes 'skater' y cargos XXL que están redefiniendo las siluetas actuales.</p>
+                    <div class="noticia-footer">
+                        <span class="noticia-fecha">09 de Julio, 2026</span>
+                        <a href="#" class="btn-leer" data-id="1">Leer más →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Noticia 2 -->
+            <article class="noticia-card">
+                <img src="images/noticias/snekers.jpg" alt="Skeaners ilegales" id="img-noticia-2">
+                <div class="noticia-body">
+                    <span class="noticia-tag">HYPE SNEAKERS</span>
+                    <h3 class="noticia-titulo" id="titulo-noticia-2">Sneakers Prohibidas: El calzado deportivo que las marcas intentaron censurar</h3>
+                    <p class="noticia-extracto">Diseños rebeldes, suelas industriales gigantescas y materiales reciclados no regulados. Te mostramos los pares que están causando controversia en la escena urbana de este año.</p>
+                    <div class="noticia-footer">
+                        <span class="noticia-fecha">28 de Junio, 2026</span>
+                        <a href="#" class="btn-leer" data-id="2">Leer más →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Noticia 3 -->
+            <article class="noticia-card">
+                <img src="images/noticias/elisium.jpg" alt="Fiesta Streetwear" id="img-noticia-3">
+                <div class="noticia-body">
+                    <span class="noticia-tag">UNDERGROUND VIP</span>
+                    <h3 class="noticia-titulo" id="titulo-noticia-3">Detrás del telón: Lo que pasó en el desfile clandestino de Elisyum</h3>
+                    <p class="noticia-extracto">Sin pasarelas tradicionales, sin luces de estudio. Un almacén abandonado sirvió de escenario para presentar nuestra línea más cruda de estética cyberpunk-punk.</p>
+                    <div class="noticia-footer">
+                        <span class="noticia-fecha">15 de Junio, 2026</span>
+                        <a href="#" class="btn-leer" data-id="3">Leer más →</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        
+        <div id="modalNoticia" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <span class="modal-tag" id="modalTag">ETIQUETA</span>
+                <h2 class="modal-titulo" id="modalTitulo">Título de la Noticia</h2>
+                <span class="modal-fecha" id="modalFecha">Fecha</span>
+                <img src="" alt="Noticia" class="modal-img" id="modalImg">
+                <div class="modal-body" id="modalCuerpo">
+                    
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <footer class="main-footer">
+        <div class="footer-nav">
+            <a href="index.html">INICIO</a>
+            <a href="productos.html">PRODUCTOS</a>
+            <a href="nosotros.html">NOSOTROS</a>
+            <a href="testimonios.html">TESTIMONIOS</a>
+            <a href="contacto.html">CONTACTO</a>
+        </div>
+
+        <div class="footer-socials">
+            <a href="https://www.facebook.com/share/1BLwyTLEC2/" class="social-item" title="Facebook">
+                <!-- Icono Facebook SVG -->
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                <span class="social-label">Facebook</span>
+            </a>
+            <a href="https://x.com/Mailsonxp" class="social-item" title="Twitter">
+                <!-- Icono Twitter / X SVG -->
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                <span class="social-label">Twitter</span>
+            </a>
+            <a href="https://www.instagram.com/_mai_san_02_?igsh=bzNjZHJ1MHczN2Y0" class="social-item" title="Instagram">
+                <!-- Icono Instagram SVG -->
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <span class="social-label">Instagram</span>
+            </a>
+            <a href="https://wa.me/56912345678" target="_blank" class="social-item" title="WhatsApp">
+                <!-- Icono WhatsApp SVG -->
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                <span class="social-label">WhatsApp</span>
+            </a>
+        </div>
+
+        <div class="footer-contact-info">
+            <div class="contact-item email-item">
+                <span class="contact-icon">✉️</span>
+                <a href="mailto:info@urbanstylestore.com">info@urbanstylestore.com</a>
+            </div>
+            <div class="contact-item phone-item">
+                <span class="contact-icon">📞</span>
+                <a href="tel:+56912345678">(+51) 9 1234 5678</a>
+            </div>
+            <div class="contact-item address-item">
+                <span class="contact-icon">🏠</span>
+                <div class="address-text">
+                    <strong>Urban Style Store</strong>
+                    <span>Cajamarca-Cajabamba</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; 2026 Urban Style Store. Todos los derechos reservados. | Diseñado por <span class="highlight">Mailson</span></p>
+        </div>
+    </footer>
+
+
+  <script src="scripts/noticias.js"></script>
+    
+</body>
+</html>
