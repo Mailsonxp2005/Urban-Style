@@ -1,0 +1,417 @@
+/* ==========================================
+   1. ESTILOS GENERALES Y RESET
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   2. HEADER Y NAVEGACIÓN
+   ========================================== */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+#menu, .menu-icon {
+    display: none; /* Oculto en escritorio */
+}
+
+/* Navbar Principal */
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 4px;
+}
+
+.navbar ul li a:hover {
+    color: #0056b3;
+}
+
+/* Submenú del Blog */
+.has-submenu .submenu-blog {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    min-width: 150px;
+    border-radius: 4px;
+}
+
+.has-submenu:hover .submenu-blog {
+    display: block;
+}
+
+.has-submenu .submenu-blog li {
+    width: 100%;
+}
+
+.has-submenu .submenu-blog li a {
+    display: block;
+    padding: 8px 20px;
+}
+
+.has-submenu .submenu-blog li a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Carrito de compras */
+.carrito-container ul {
+    list-style: none;
+}
+
+#img-carrito {
+    width: 30px;
+    cursor: pointer;
+}
+
+.sub-menu {
+    position: relative;
+}
+
+#carrito {
+    display: none; 
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    padding: 20px;
+    min-width: 300px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    z-index: 100;
+}
+
+.sub-menu:hover #carrito {
+    display: block; 
+}
+
+#lista-carrito {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+}
+
+#lista-carrito th {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+.btn-2 {
+    display: block;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.btn-2:hover {
+    background-color: #555;
+}
+
+/* ==========================================
+   3. CONTENIDO DE LA PÁGINA DE CONTACTO
+   ========================================== */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+main > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+section {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    color: #444;
+}
+
+/* Datos de contacto específicos */
+.datos-contacto ul li a {
+    color: #0056b3;
+}
+
+.datos-contacto ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 📍 NUEVO: Mapa de Google Maps Responsivo */
+.mapa-seccion {
+    display: flex;
+    flex-direction: column;
+}
+
+.mapa-contenedor {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.mapa-contenedor iframe {
+    display: block;
+    width: 100%;
+    height: 400px;
+}
+
+/* ✉️ Formulario de Contacto */
+form p {
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+form button[type="submit"] {
+    background-color: #0056b3;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #004085;
+}
+
+/* ❓ Acordeón / FAQs */
+details {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border-left: 4px solid #0056b3;
+    transition: background-color 0.3s;
+}
+
+details:hover {
+    background-color: #f1f3f5;
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+
+details p {
+    margin-top: 10px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   4. FOOTER
+   ========================================== */
+.footer {
+    background-color: #1a1a1a;
+    color: #b3b3b3;
+    padding: 60px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer .link h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.footer .link ul {
+    list-style: none;
+}
+
+.footer .link ul li {
+    margin-bottom: 10px;
+}
+
+.footer .link ul li a {
+    font-size: 0.9rem;
+}
+
+.footer .link ul li a:hover {
+    color: #fff;
+}
+
+/* ==========================================
+   5. RESPONSIVE DESIGN (MÓVILES)
+   ========================================== */
+@media (max-width: 768px) {
+    /* Menú Hamburguesa básico */
+    .menu-icon {
+        display: block;
+        width: 30px;
+        cursor: pointer;
+        margin-right: 15px;
+    }
+
+    .logo-area {
+        flex-direction: row;
+    }
+
+    .navbar {
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Muestra el menú si el checkbox oculto está activo */
+    #menu:checked ~ .navbar {
+        display: block;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .navbar ul li a {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .has-submenu .submenu-blog {
+        position: relative;
+        box-shadow: none;
+        padding-left: 20px;
+        background-color: #fafafa;
+    }
+
+    main {
+        margin: 20px auto;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mapa-contenedor iframe {
+        height: 300px; /* Un poco más pequeño en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 20px;
+    }
+}

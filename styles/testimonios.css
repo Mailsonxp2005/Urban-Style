@@ -1,0 +1,303 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+
+:root {
+    --test-principal: #000000;
+    --test-secundario: #ffffff;
+    --test-gris-oscuro: #111111;
+    --test-gris-medio: #555555;
+    --test-gris-claro: #f9f9f9;
+    --test-borde-gris: #eeeeee;
+    --test-acento: #ff3e3e; /* Rojo urbano característico */
+    --test-fuente: 'Montserrat', sans-serif;
+    --test-transicion: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Aplicación de fuente base y control de caja */
+.testimonios-section {
+    font-family: var(--test-fuente);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.testimonios-section *, 
+.testimonios-section *::before, 
+.testimonios-section *::after {
+    box-sizing: border-box;
+}
+
+
+
+.testimonios-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.testimonios-header .sub-tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #777;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.testimonios-header h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin: 10px 0;
+    color: var(--test-principal);
+    line-height: 1.2;
+}
+
+.testimonios-header .header-line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--test-principal);
+    margin: 15px auto 25px;
+}
+
+.testimonios-header p {
+    font-size: 1rem;
+    color: var(--test-gris-medio);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.testimonio-card {
+    background-color: var(--test-gris-claro);
+    border-left: 4px solid var(--test-principal);
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--test-transicion);
+}
+
+.testimonio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border-left-color: var(--test-acento);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.user-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-avatar {
+    width: 55px;         
+    height: 55px;        
+    border-radius: 50%;  /* Recorta en forma redonda */
+    object-fit: cover;   /* Centra y recorta la foto rectangular sin aplastarla ni estirarla */
+    object-position: center;
+    border: 2px solid var(--test-borde-gris);
+    flex-shrink: 0;      /* Evita que se deforme dentro del flexbox */
+}
+
+.user-info h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--test-principal);
+}
+
+.user-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--test-acento);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 2px;
+}
+
+.stars {
+    color: var(--test-principal);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.testimonio-card:hover .stars {
+    color: var(--test-acento);
+    transition: color 0.3s ease;
+}
+
+.testimonio-text {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    font-style: italic;
+}
+
+.date-tag {
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.separator-line {
+    height: 1px;
+    background-color: var(--test-borde-gris);
+    margin: 60px 0;
+}
+
+
+
+.formulario-testimonio {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--test-principal);
+    color: var(--test-secundario);
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.formulario-testimonio h3 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.formulario-testimonio p {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--test-secundario);
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--test-gris-oscuro);
+    border: 1px solid #333;
+    color: var(--test-secundario);
+    font-family: var(--test-fuente);
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: var(--test-acento);
+    outline: none;
+}
+
+.rating-area {
+    display: flex;
+    flex-direction: column; /* Cambiado para ordenar label y estrellas en filas */
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.rating-area label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.star-rating {
+    display: flex;
+    gap: 8px;
+}
+
+.star {
+    font-size: 1.8rem; /* Estrellas un poco más imponentes */
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s ease, transform 0.1s ease;
+    user-select: none;
+}
+
+.star:hover {
+    transform: scale(1.15);
+}
+
+.star.active {
+    color: var(--test-acento); /* Estrellas activas en color Rojo Urbano */
+}
+
+/* BOTÓN DE ENVÍO PRESETADO */
+.btn-enviar-opinion {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--test-secundario);
+    color: var(--test-principal);
+    border: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-family: var(--test-fuente);
+    transition: var(--test-transicion);
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.btn-enviar-opinion:hover {
+    background-color: var(--test-acento);
+    color: var(--test-secundario);
+}
+
+
+
+@media (max-width: 600px) {
+    .testimonios-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .formulario-testimonio {
+        padding: 25px 20px;
+    }
+    
+    .rating-area {
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
