@@ -12,63 +12,64 @@
 <body>
 
     <!-- MENÚ DE NAVEGACIÓN -->
-    <header class="header header-nosotros">
-        <div class="menu container">
-            <div class="logo-area">
-                <input type="checkbox" id="menu">
-                <label for="menu"> 
-                    <img src="images/menu.png" class="menu-icon" alt="menu">
-                </label>
-                <a href="index.html" class="logo-link">
-                    <img src="images/logo.png" class="logo-img" alt="Logo MAI">
-                </a>
-            </div>
+   <header class="header header-nosotros">
+    <div class="menu container">
+        <input type="checkbox" id="menu">
 
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="testimonios.html">Testimonios</a></li>
-                    <li class="has-submenu">
-                        <a href="#">Blog</a>
-                        <ul class="submenu-blog">
-                            <li><a href="noticias.html">Noticias</a></li>
-                            <li><a href="articulos.html">Artículos</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-
-            <div class="carrito-container">
-    <ul>
-        <li class="sub-menu">
-            <img src="images/car.svg" id="img-carrito" alt="carrito">
-            <div id="carrito">
-                <table id="lista-carrito">
-                    <thead>
-                        <tr>
-                            <th>Imagen</th>
-                            <th>Nombre</th>
-                            <th>Precio</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>  
-                
-                <div style="display: flex; gap: 10px; margin-top: 15px; padding: 0 10px 10px 10px;">
-                    <a href="#" id="vaciar-carrito" class="btn-2" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none;">Vaciar Carrito</a>
-                    <a href="pago.html" id="ir-pagar" class="btn-1" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none; display: inline-block;">Pagar Pedido</a>
-                </div>
-            </div>
-        </li>
-    </ul>
-</div>
+        <div class="logo-area">
+            <label for="menu"> 
+                <img src="images/menu.png" class="menu-icon" alt="menu">
+            </label>
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" class="logo-img" alt="Logo MAI">
+            </a>
         </div>
-    </header>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="testimonios.html">Testimonios</a></li>
+                <li class="has-submenu">
+                    <a href="#">Blog</a>
+                    <ul class="submenu-blog">
+                        <li><a href="noticias.html">Noticias</a></li>
+                        <li><a href="articulos.html">Artículos</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="carrito-container">
+            <ul>
+                <li class="sub-menu">
+                    <img src="images/car.svg" id="img-carrito" alt="carrito">
+                    <div id="carrito">
+                        <table id="lista-carrito">
+                            <thead>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>   
+                        
+                        <div style="display: flex; gap: 10px; margin-top: 15px; padding: 0 10px 10px 10px;">
+                            <a href="#" id="vaciar-carrito" class="btn-2" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none;">Vaciar Carrito</a>
+                            <a href="pago.html" id="ir-pagar" class="btn-1" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none; display: inline-block;">Pagar Pedido</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
 
     <!-- SECCIÓN HERO DE BIENVENIDA -->
     <section class="about-hero container">

@@ -5,18 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería | Elisyum Trend</title>
-    <!-- Mantenemos el enlace a tu hoja de estilos original -->
     <link rel="stylesheet" href="styles/indexstyle.css">
     <link rel="stylesheet" href="styles/galeria.css">
-    <script src="scripts/indexscript.js"></script>
 </head>
 
 <body>
 
-   <header class="header" style="min-height: auto; padding-bottom: 20px;">
+    <header class="header" style="min-height: auto; padding-bottom: 20px;">
         <div class="menu container">
+            <input type="checkbox" id="menu">
+
             <div class="logo-area">
-                <input type="checkbox" id="menu">
                 <label for="menu"> 
                     <img src="images/menu.png" class="menu-icon" alt="menu">
                 </label>
@@ -30,7 +29,7 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="productos.html">Productos</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="galeria.html" class="activo">Galería</a></li>
                     <li><a href="testimonios.html">Testimonios</a></li>
                     <li class="has-submenu">
                         <a href="#">Blog</a>
@@ -44,40 +43,35 @@
             </nav>
 
             <div class="carrito-container">
-    <ul>
-        <li class="sub-menu">
-            <img src="images/car.svg" id="img-carrito" alt="carrito">
-            <div id="carrito">
-                <table id="lista-carrito">
-                    <thead>
-                        <tr>
-                            <th>Imagen</th>
-                            <th>Nombre</th>
-                            <th>Precio</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>  
-                
-                <!-- Contenedor con los dos botones alineados perfectamente -->
-                <div style="display: flex; gap: 10px; margin-top: 15px; padding: 0 10px 10px 10px;">
-                    <a href="#" id="vaciar-carrito" class="btn-2" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none;">Vaciar Carrito</a>
-                    <a href="pago.html" id="ir-pagar" class="btn-1" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none; display: inline-block;">Pagar Pedido</a>
-                </div>
+                <ul>
+                    <li class="sub-menu">
+                        <img src="images/car.svg" id="img-carrito" alt="carrito">
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>   
+                            
+                            <div style="display: flex; gap: 10px; margin-top: 15px; padding: 0 10px 10px 10px;">
+                                <a href="#" id="vaciar-carrito" class="btn-2" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none;">Vaciar Carrito</a>
+                                <a href="pago.html" id="ir-pagar" class="btn-1" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none; display: inline-block;">Pagar Pedido</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </li>
-    </ul>
-</div>
-
         </div>
     </header>
 
-
     <main class="main-content">
-
         <section class="lookbook-section">
-
             <div class="lookbook-header">
                 <span class="sub-tag">ELISYUM DROP 2026</span>
                 <h2>LOOKBOOK</h2>
@@ -89,19 +83,18 @@
                 </p>
             </div>
 
-            <!-- ================= FILTROS DE LA GALERÍA CON DATA-ATTRIBUTES ================= -->
-            <div class="galeria-filtros" style="text-align: center; margin-bottom: 30px;">
-                <span class="filtro-btn activo" data-filter="todos" style="margin: 0 10px; font-weight: bold; cursor: pointer; border-bottom: 2px solid #000;">TODOS</span>
-                <span class="filtro-btn" data-filter="oversized" style="margin: 0 10px; color: #777; cursor: pointer;">OVERSIZED</span>
-                <span class="filtro-btn" data-filter="techwear" style="margin: 0 10px; color: #777; cursor: pointer;">TECHWEAR</span>
-                <span class="filtro-btn" data-filter="accesorios" style="margin: 0 10px; color: #777; cursor: pointer;">ACCESORIOS</span>
+            <!-- FILTROS -->
+            <div class="galeria-filtros">
+                <span class="filtro-btn activo" data-filter="todos">TODOS</span>
+                <span class="filtro-btn" data-filter="oversized">OVERSIZED</span>
+                <span class="filtro-btn" data-filter="techwear">TECHWEAR</span>
+                <span class="filtro-btn" data-filter="accesorios">ACCESORIOS</span>
             </div>
 
-            <!-- ================= GRID CON ELEMENTOS CATEGORIZADOS ================= -->
+            <!-- GRID -->
             <div class="galeria-grid">
-
                 <!-- 1. Oversized Hoodie -->
-                <article class="galeria-item item-grande" data-categoria="oversized">
+                <article class="galeria-item" data-categoria="oversized">
                     <img src="images/images_products/Streetwear Look 1 - Oversized Hoodie.jpg" alt="Oversized Hoodie">
                     <div class="item-overlay">
                         <span class="item-tag">NUEVA COLECCIÓN</span>
@@ -111,7 +104,7 @@
                 </article>
 
                 <!-- 2. Cargo Pants -->
-                <article class="galeria-item item-ancho" data-categoria="techwear">
+                <article class="galeria-item" data-categoria="techwear">
                     <img src="images/images_products/Streetwear Look 2 - Cargo Pants.jpg" alt="Cargo Pants">
                     <div class="item-overlay">
                         <span class="item-tag">LIMITED EDITION</span>
@@ -141,7 +134,7 @@
                 </article>
 
                 <!-- 5. Cyber Windbreaker -->
-                <article class="galeria-item item-alto" data-categoria="techwear">
+                <article class="galeria-item" data-categoria="techwear">
                     <img src="images/images_products/Streetwear Look 5 - Windbreaker Cyber.jpg" alt="Windbreaker">
                     <div class="item-overlay">
                         <span class="item-tag">EXCLUSIVE</span>
@@ -161,7 +154,7 @@
                 </article>
 
                 <!-- 7. Tactical Vest -->
-                <article class="galeria-item item-ancho" data-categoria="techwear">
+                <article class="galeria-item" data-categoria="techwear">
                     <img src="images/images_products/Streetwear Look 7 - Techwear Vest.jpg" alt="Vest">
                     <div class="item-overlay">
                         <span class="item-tag">TECHWEAR</span>
@@ -179,22 +172,19 @@
                         <a href="productos.html" class="item-btn">Comprar →</a>
                     </div>
                 </article>
-
             </div>
 
-            <!-- ================= SECCIÓN DE INFORMACIÓN URBANA ================= -->
-            <div class="galeria-info-extra" style="margin-top: 60px; padding: 4px 20px; text-align: center; background-color: #f9f9f9;">
-                <h3 style="margin-bottom: 10px; letter-spacing: 2px;">EL ESTILO NO TIENE REGLAS</h3>
-                <p style="max-width: 600px; margin: 0 auto 20px; color: #555;">Cada prenda de nuestra galería representa la cultura underground y el movement de las calles. Diseños hechos para destacar.</p>
-                <div class="badges-container" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <!-- INFORMACIÓN EXTRA -->
+            <div class="galeria-info-extra">
+                <h3>EL ESTILO NO TIENE REGLAS</h3>
+                <p>Cada prenda de nuestra galería representa la cultura underground y el movement de las calles. Diseños hechos para destacar.</p>
+                <div class="badges-container">
                     <div><strong>Ediciones:</strong> 100% Limitadas</div>
                     <div><strong>Materiales:</strong> Algodón Premium Heavyweight</div>
                     <div><strong>Diseño:</strong> Oversized Fit</div>
                 </div>
             </div>
-
         </section>
-
     </main>
 
     <footer class="main-footer">
@@ -208,22 +198,18 @@
 
         <div class="footer-socials">
             <a href="https://www.facebook.com/share/1BLwyTLEC2/" class="social-item" title="Facebook">
-                <!-- Icono Facebook SVG -->
                 <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                 <span class="social-label">Facebook</span>
             </a>
             <a href="https://x.com/Mailsonxp" class="social-item" title="Twitter">
-                <!-- Icono Twitter / X SVG -->
                 <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
                 <span class="social-label">Twitter</span>
             </a>
             <a href="https://www.instagram.com/_mai_san_02_?igsh=bzNjZHJ1MHczN2Y0" class="social-item" title="Instagram">
-                <!-- Icono Instagram SVG -->
                 <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 <span class="social-label">Instagram</span>
             </a>
             <a href="https://wa.me/56912345678" target="_blank" class="social-item" title="WhatsApp">
-                <!-- Icono WhatsApp SVG -->
                 <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                 <span class="social-label">WhatsApp</span>
             </a>
@@ -252,49 +238,7 @@
         </div>
     </footer>
 
+    <!-- Único script importado de manera correcta al final del documento -->
     <script src="scripts/indexscript.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const filtros = document.querySelectorAll(".filtro-btn");
-            const items = document.querySelectorAll(".galeria-item");
-
-            filtros.forEach(filtro => {
-                filtro.addEventListener("click", () => {
-                    filtros.forEach(f => {
-                        f.style.color = "#777";
-                        f.style.borderBottom = "none";
-                        f.style.fontWeight = "normal";
-                    });
-
-                    filtro.style.color = "#000";
-                    filtro.style.borderBottom = "2px solid #000";
-                    filtro.style.fontWeight = "bold";
-
-                    const categoriaSeleccionada = filtro.getAttribute("data-filter");
-
-                    items.forEach(item => {
-                        const categoriaItem = item.getAttribute("data-categoria");
-
-                        if (categoriaSeleccionada === "todos" || categoriaItem === categoriaSeleccionada) {
-                            // Mostrar elementos coincidentes de forma fluida
-                            item.style.display = "flex";
-                            setTimeout(() => {
-                                item.style.opacity = "1";
-                                item.style.transform = "scale(1)";
-                            }, 50);
-                        } else {
-                            // Ocultar los elementos que no correspondan
-                            item.style.opacity = "0";
-                            item.style.transform = "scale(0.95)";
-                            setTimeout(() => {
-                                item.style.display = "none";
-                            }, 300); // 300ms hace juego con la transición CSS por defecto
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>

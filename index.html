@@ -5,80 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moda Juvenil | Elisyum Trend</title>
-    <link class="styles" rel="stylesheet" href="styles/indexstyle.css">
+    <!-- Corregido el enlace de estilos -->
+    <link rel="stylesheet" href="styles/indexstyle.css">
 </head>
 <body>
 
-    <header class="header">
-        <div class="menu container">
-            <div class="logo-area">
-                <input type="checkbox" id="menu">
-                <label for="menu"> 
-                    <img src="images/menu.png" class="menu-icon" alt="menu">
-                </label>
-                <a href="index.html" class="logo-link">
-                    <img src="images/logo.png" class="logo-img" alt="Logo MAI">
-                </a>
-            </div>
+   <header class="header">
+    <div class="menu container">
+        <!-- El checkbox debe estar al mismo nivel que .navbar para que el CSS funcione -->
+        <input type="checkbox" id="menu">
 
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="testimonios.html">Testimonios</a></li>
-                    <li class="has-submenu">
-                        <a href="#">Blog</a>
-                        <ul class="submenu-blog">
-                            <li><a href="noticias.html">Noticias</a></li>
-                            <li><a href="articulos.html">Artículos</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-
-          <div class="carrito-container">
-    <ul>
-        <li class="sub-menu">
-            <img src="images/car.svg" id="img-carrito" alt="carrito">
-            <div id="carrito">
-                <table id="lista-carrito">
-                    <thead>
-                        <tr>
-                            <th>Imagen</th>
-                            <th>Nombre</th>
-                            <th>Precio</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>  
-                
-                <!-- Contenedor con los dos botones alineados perfectamente -->
-                <div style="display: flex; gap: 10px; margin-top: 15px; padding: 0 10px 10px 10px;">
-                    <a href="#" id="vaciar-carrito" class="btn-2" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none;">Vaciar Carrito</a>
-                    <a href="pago.html" id="ir-pagar" class="btn-1" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none; display: inline-block;">Pagar Pedido</a>
-                </div>
-            </div>
-        </li>
-    </ul>
-</div>
-
+        <div class="logo-area">
+            <!-- Al hacer clic en este label, se activa el checkbox superior -->
+            <label for="menu"> 
+                <img src="images/menu.png" class="menu-icon" alt="menu">
+            </label>
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" class="logo-img" alt="Logo MAI">
+            </a>
         </div>
 
-        <div class="header-content container">
-            <div class="header-img">
-                <img src="images/right.png" alt="Nueva colección urbana">
-            </div>
-            <div class="header-txt">
-                <h1>Ofertas especiales</h1>
-                <p>estrena las mejores prendas de la temporada urbana</p>
-                <a href="#" class="btn-1">Información</a>
-            </div>          
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="testimonios.html">Testimonios</a></li>
+                <li class="has-submenu">
+                    <a href="#">Blog</a>
+                    <ul class="submenu-blog">
+                        <li><a href="noticias.html">Noticias</a></li>
+                        <li><a href="articulos.html">Artículos</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="carrito-container">
+            <ul>
+                <li class="sub-menu">
+                    <img src="images/car.svg" id="img-carrito" alt="carrito">
+                    <div id="carrito">
+                        <table id="lista-carrito">
+                            <thead>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>   
+                        
+                        <div style="display: flex; gap: 10px; margin-top: 15px; padding: 0 10px 10px 10px;">
+                            <a href="#" id="vaciar-carrito" class="btn-2" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none;">Vaciar Carrito</a>
+                            <a href="pago.html" id="ir-pagar" class="btn-1" style="flex: 1; text-align: center; padding: 10px 5px; font-size: 13px; text-decoration: none; display: inline-block;">Pagar Pedido</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-    </header>
+    </div>
+
+    <div class="header-content container">
+        <div class="header-img">
+            <img src="images/right.png" alt="Nueva colección urbana">
+        </div>
+        <div class="header-txt">
+            <h1>Ofertas especiales</h1>
+            <p>estrena las mejores prendas de la temporada urbana</p>
+            <a href="#" class="btn-1">Información</a>
+        </div>           
+    </div>
+</header>
 
     <section class="oferta container">
         <div class="oferta-1">
@@ -273,7 +275,7 @@
             </div>
             <div class="contact-item phone-item">
                 <span class="contact-icon">📞</span>
-                <a href="tel:+56912345678">(+51) 9 1234 5678</a>
+                <a href="tel:+51912345678">(+51) 9 1234 5678</a>
             </div>
             <div class="contact-item address-item">
                 <span class="contact-icon">🏠</span>
