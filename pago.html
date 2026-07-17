@@ -328,7 +328,7 @@
 
                 <!-- Boleta de Venta -->
                 <div class="boleta-preview" id="boleta">
-                    <img src="images/Logo.png" class="boleta-logo" alt="Logo Elisyum Trend">
+                    <img src="images/logo.png" class="boleta-logo" alt="Logo Elisyum Trend">
                     
                     <div class="boleta-header">
                         <h4>ELISYUM TREND S.A.C.</h4>
@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- AUTO-FORMATO DINÁMICO PARA EL VENCIMIENTO (MM/AA) ---
     if (inputExp) {
         inputExp.addEventListener('input', (e) => {
-            let valor = e.target.value.replace(/\D/g, ''); // Eliminar todo lo que no sea número
+            let valor = e.target.value.replace(/\D/g, ''); 
             if (valor.length > 2) {
                 valor = valor.substring(0, 2) + '/' + valor.substring(2, 4);
             }
