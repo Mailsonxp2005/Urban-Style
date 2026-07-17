@@ -1,8 +1,6 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
     
-    
+    // Funcionalidad de Carrito de Compras
     const carrito = document.getElementById('carrito');
     const listaCarrito = document.querySelector('#lista-carrito tbody');
     const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
@@ -32,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const productoId = boton.getAttribute('data-id');
                 
                 boton.parentElement.parentElement.remove();
-                
                 eliminarProductoStorage(productoId);
             }
         });
@@ -74,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Obtener productos de LocalStorage
     function obtenerProductosStorage() {
         let productosLS;
         if (localStorage.getItem('carrito') === null) {
@@ -85,14 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return productosLS;
     }
 
-    // Eliminar producto individual de LocalStorage
     function eliminarProductoStorage(id) {
         let productosLS = obtenerProductosStorage();
         productosLS = productosLS.filter(producto => producto.id !== id);
         localStorage.setItem('carrito', JSON.stringify(productosLS));
     }
 
-
+    // Comportamiento del menú móvil (Cerrar al hacer clic en un link)
     const menuCheckbox = document.getElementById('menu');
     const navbarLinks = document.querySelectorAll('.navbar a');
 
@@ -104,8 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-   
+    // Acordeón de FAQs de selección única (Cierra los otros al abrir uno)
     const detalles = document.querySelectorAll('details');
 
     detalles.forEach((targetDetail) => {

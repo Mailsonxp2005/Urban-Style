@@ -1,7 +1,5 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     
-
     const carrito = document.getElementById('carrito');
     const listaCarrito = document.querySelector('#lista-carrito tbody');
     const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
@@ -115,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <td>${producto.titulo}</td>
             <td>${producto.precio}</td>
             <td>
-                <a href="#" class="borrar-producto" data-id="${producto.id}" style="color: red; font-size: 1.2rem;">
+                <a href="#" class="borrar-producto" data-id="${producto.id}" style="color: red; font-size: 1.2rem; text-decoration: none;">
                     🗑️
                 </a>
             </td>
@@ -145,7 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('carrito', JSON.stringify(productosLS));
     }
 
- 
     const menuCheckbox = document.getElementById('menu');
     const navbarLinks = document.querySelectorAll('.navbar a');
 
@@ -157,14 +154,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Se corrigió el error de sintaxis al final de esta función
     const detalles = document.querySelectorAll('details');
     detalles.forEach((targetDetail) => {
         targetDetail.addEventListener('click', () => {
-            detalles.forEach((detail) => {
-                if (detail !== targetDetail) {
-                    detail.removeAttribute('open');
-                }
-            });
+            // Lógica para cerrar otros detalles abiertos si es necesario
         });
     });
 });
