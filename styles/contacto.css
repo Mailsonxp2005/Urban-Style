@@ -214,7 +214,7 @@ section h2 {
     text-decoration: underline;
 }
 
-/* 📍 NUEVO: Mapa de Google Maps Responsivo */
+/* Mapa de Google Maps */
 .mapa-seccion {
     display: flex;
     flex-direction: column;
@@ -233,7 +233,7 @@ section h2 {
     height: 400px;
 }
 
-/* ✉️ Formulario de Contacto */
+/* Formulario de Contacto */
 form p {
     margin-bottom: 20px;
 }
@@ -280,7 +280,7 @@ form button[type="submit"]:hover {
     background-color: #004085;
 }
 
-/* ❓ Acordeón / FAQs */
+/* Acordeón / FAQs */
 details {
     background-color: #f8f9fa;
     padding: 15px;
@@ -348,7 +348,6 @@ details p {
    5. RESPONSIVE DESIGN (MÓVILES)
    ========================================== */
 @media (max-width: 768px) {
-    /* Menú Hamburguesa básico */
     .menu-icon {
         display: block;
         width: 30px;
@@ -370,7 +369,6 @@ details p {
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    /* Muestra el menú si el checkbox oculto está activo */
     #menu:checked ~ .navbar {
         display: block;
     }
@@ -402,7 +400,7 @@ details p {
     }
 
     .mapa-contenedor iframe {
-        height: 300px; /* Un poco más pequeño en móviles */
+        height: 300px;
     }
 }
 

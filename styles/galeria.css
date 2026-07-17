@@ -1,8 +1,3 @@
-/* ==========================================================================
-   ESTILOS EXCLUSIVOS PARA LA GALERÍA (galeria.css)
-   Este archivo NO afecta al Header ni al Footer globales.
-   ========================================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
 
 :root {
@@ -11,9 +6,9 @@
     --galeria-gris-oscuro: #111111;
     --galeria-gris-medio: #777777;
     --galeria-gris-claro: #f9f9f9;
-    --galeria-acento: #ff3e3e; /* Rojo urbano */
+    --galeria-acento: #ff3e3e; 
     --galeria-fuente: 'Montserrat', sans-serif;
-    --galeria-transicion: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --galeria-transicion: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .lookbook-section {
@@ -24,13 +19,11 @@
     box-sizing: border-box;
 }
 
-/* Asegura que los elementos internos usen box-sizing heredado */
 .lookbook-section *, 
 .lookbook-section *::before, 
 .lookbook-section *::after {
     box-sizing: border-box;
 }
-
 
 .lookbook-header {
     text-align: center;
@@ -71,72 +64,81 @@
 }
 
 /* ==========================================================================
-   FILTROS DE LA GALERÍA
+   FILTROS DE LA GALERÍA (Limpios de estilos en línea)
    ========================================================================== */
-
 .galeria-filtros {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-bottom: 40px;
     flex-wrap: wrap;
+    text-align: center;
 }
 
-.galeria-filtros span {
+.galeria-filtros .filtro-btn {
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: normal;
+    color: var(--galeria-gris-medio);
     letter-spacing: 2px;
     text-transform: uppercase;
-    transition: var(--galeria-transicion);
+    cursor: pointer;
     padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: var(--galeria-transicion);
 }
 
-.galeria-filtros span:hover {
-    color: var(--galeria-principal) !important;
+.galeria-filtros .filtro-btn.activo {
+    color: var(--galeria-principal);
+    border-bottom: 2px solid var(--galeria-principal);
+    font-weight: bold;
+}
+
+.galeria-filtros .filtro-btn:hover {
+    color: var(--galeria-principal);
     border-bottom: 2px solid var(--galeria-principal);
 }
 
-
-
+/* ==========================================================================
+   GRID DE LA GALERÍA
+   ========================================================================== */
 .galeria-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
-    align-items: start; /* Alinea los elementos al inicio para evitar deformaciones */
+    align-items: start;
 }
 
-/* Ítems individuales */
 .galeria-item {
     position: relative;
     overflow: hidden;
-    background-color: transparent; /* Eliminamos el fondo negro */
+    background-color: transparent;
     border-radius: 4px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     display: flex; 
-    
     opacity: 1;
     transform: scale(1);
-    transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Transición suave para ocultar y mostrar */
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    visibility: visible;
 }
 
-/* Remover tamaños asimétricos fijos si deforman las imágenes originales */
-.galeria-item.item-grande,
-.galeria-item.item-ancho,
-.galeria-item.item-alto {
-    grid-column: span 1;
-    grid-row: span 1;
+/* Clase dinámica añadida por JS para filtrar de forma fluida */
+.galeria-item.oculto {
+    opacity: 0;
+    transform: scale(0.92);
+    visibility: hidden;
+    position: absolute; /* Evita que ocupe espacio físico en el grid */
+    pointer-events: none;
 }
 
-/* Imágenes de la Galería */
 .galeria-item img {
     width: 100%;
-    height: auto; /* La imagen define su propia altura proporcional */
+    height: auto;
     display: block;
     transition: var(--galeria-transicion);
     filter: grayscale(15%);
 }
 
-/* Overlay (Capa interactiva) */
 .galeria-item .item-overlay {
     position: absolute;
     top: 0;
@@ -153,7 +155,6 @@
     z-index: 2;
 }
 
-/* Hover de los Elementos */
 .galeria-item:hover img {
     transform: scale(1.05);
     filter: grayscale(0%);
@@ -163,7 +164,6 @@
     opacity: 1;
 }
 
-/* Contenido del Overlay */
 .galeria-item .item-tag {
     font-size: 0.7rem;
     font-weight: 700;
@@ -202,7 +202,6 @@
 /* ==========================================================================
    SECCIÓN DE INFORMACIÓN URBANA
    ========================================================================== */
-
 .galeria-info-extra {
     margin-top: 80px;
     padding: 50px 30px !important;
@@ -246,9 +245,27 @@
 }
 
 /* ==========================================================================
-   MEDIA QUERIES (Responsivo Exclusivo)
+   CARRITO (Visualización activa)
    ========================================================================== */
+#carrito {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: var(--galeria-secundario);
+    min-width: 300px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 100;
+    border-radius: 4px;
+}
 
+#carrito.mostrar-carrito {
+    display: block; /* Muestra el carrito cuando se activa la clase */
+}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
 @media (max-width: 600px) {
     .lookbook-header h2 {
         font-size: 2.2rem;
